@@ -12,7 +12,7 @@ class CategoriesController extends Controller {
     }
 
     public function show($id) {
-        $item = Category::find($id);
+        $item = Category::findOrFail($id);
         return response()->json($item);
     }
 

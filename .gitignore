@@ -7,3 +7,5 @@ node_modules/
 Homestead.json
 Homestead.yaml
 .phpunit.result.cache
+files/*.csv
+app/Console/Commands/files/*.csv

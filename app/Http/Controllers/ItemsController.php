@@ -23,12 +23,12 @@ class ItemsController extends Controller {
     }
 
     public function show($id) {
-        $item = Item::find($id);
+        $item = Item::findOrFail($id);
         return response()->json($item);
     }
 
     public function update(Request $request, $id) {
-        $item = Item::find($id);
+        $item = Item::findOrFail($id);
 
         $item->code        = $request->input('code');
         $item->title       = $request->input('title');
@@ -38,7 +38,7 @@ class ItemsController extends Controller {
     }
 
     public function destroy($id) {
-        $item = Item::find($id);
+        $item = Item::findOrFail($id);
         $item->delete();
         return response()->json('item removed successfully');
     }

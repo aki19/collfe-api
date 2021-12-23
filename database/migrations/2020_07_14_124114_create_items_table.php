@@ -14,8 +14,9 @@ class CreateItemsTable extends Migration {
     public function up() {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('category_id')->comment('カテゴリーID');
-            $table->string('code', 20)->nullable()->comment('コード');
+            $table->unsignedInteger('category_id')->comment('カテゴリーID')->index();
+            $table->string('asin', 20)->nullable()->comment('ASIN')->index();
+            $table->string('isbn', 20)->nullable()->comment('ISBN')->index();
             $table->string('title')->nullable()->comment('タイトル');
             $table->string('author')->nullable()->comment('著者');
             $table->string('party')->nullable()->comment('関係者');

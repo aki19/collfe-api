@@ -13,7 +13,11 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\Commands\ImportKindleItemCommand::class
+        \App\Console\Commands\ImportKindleItemCommand::class,
+        \App\Console\Commands\ImportBooklogItemCommand::class,
+        \App\Console\Commands\ClearLogFileCommand::class,
+        \App\Console\Commands\HobbyReportCommand::class,
+        \App\Console\Commands\GetRssCommand::class
     ];
 
     /**
